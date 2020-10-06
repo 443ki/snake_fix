@@ -1,0 +1,8 @@
+<launch>
+  <node  name="joy_snake_fix_cmd" pkg="snake_fix" type="joy_snake_fix_cmd" required="true" output="screen">
+    <!--
+    <remap from="snake_fix_open/execution" to="~snake_fix_open/execution" />
+    <remap from="snake_fix_close/execution" to="~snake_fix_close/execution" />
+  -->
+  </node>
+</launch>

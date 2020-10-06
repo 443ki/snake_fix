@@ -1,0 +1,18 @@
+<launch>
+  <arg name="is_loop" default="false"/>
+
+  <node  name="snake_fix_open" pkg="dynamixel_workbench_operators" type="joint_operator" required="true" >
+    <param name="is_loop" value="$(arg is_loop)"/>
+    <remap from="execution" to="~execution" />
+    <remap from="trajectory_info" to="~trajectory_info" />
+    <param name="trajectory_info" value="$(find snake_fix)/config/snake_fix_open.yaml"/>
+  </node>
+
+  <node  name="snake_fix_close" pkg="dynamixel_workbench_operators" type="joint_operator" required="true">
+    <param name="is_loop" value="$(arg is_loop)"/>
+    <remap from="execution" to="~execution" />
+    <remap from="trajectory_info" to="~trajectory_info" />
+    <param name="trajectory_info" value="$(find snake_fix)/config/snake_fix_close.yaml"/>
+  </node>
+
+</launch>
